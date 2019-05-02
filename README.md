@@ -1,27 +1,25 @@
 # Chatversity
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.0.
+Chatversity is an app created by college students for college students. Join your college or university and create or join discussion boards and more. Chatversity is entirely free to use and can help students discover new groups or clubs of their interest.
 
-## Development server
+## Status' & Info
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![](https://img.shields.io/github/issues/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/forks/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/stars/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/stars/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/license/NoahFlowa/Chatversity.svg)
 
-## Code scaffolding
+![](https://img.shields.io/github/commit-activity/m/NoahFlowa/Chatversity.svg)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Development Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ - [Apache Cassandra](http://cassandra.apache.org/)
+ - [Auth0](https://auth0.com/)
+ - [Angular](https://angular.io)
+ - [NodeJS](https://nodejs.org/)
+ - [NativeScript?](https://nativescript.org)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Creators
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ - [Noah Osterhout]()
+ - [Connor Hansen]()
+ - [Richie Tarkowski]()
