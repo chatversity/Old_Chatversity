@@ -23,3 +23,6 @@ Chatversity is an app created by college students for college students. Join you
  - [Noah Osterhout]()
  - [Connor Hansen]()
  - [Richie Tarkowski]()
+ - [Wyatt Miller]()
+ - [Scott Peterson]()
+ - [Cati Kujawski]()
