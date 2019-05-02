@@ -4,9 +4,9 @@ Chatversity is an app created by college students for college students. Join you
 
 ## Status' & Info
 
-![](https://img.shields.io/github/issues/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/forks/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/stars/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/stars/NoahFlowa/Chatversity.svg) ![](https://img.shields.io/github/license/NoahFlowa/Chatversity.svg)
+![](https://img.shields.io/github/issues/chatversity/Chatversity.svg) ![](https://img.shields.io/github/forks/chatversity/Chatversity.svg) ![](https://img.shields.io/github/stars/chatversity/Chatversity.svg) ![](https://img.shields.io/github/stars/chatversity/Chatversity.svg) ![](https://img.shields.io/github/license/chatversity/Chatversity.svg)
 
-![](https://img.shields.io/github/commit-activity/m/NoahFlowa/Chatversity.svg)
+![](https://img.shields.io/github/commit-activity/m/chatversity/Chatversity.svg)
 
 
 ## Development Stack
