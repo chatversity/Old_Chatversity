@@ -1,3 +1,22 @@
-<p>
-  new-user works!
-</p>
+<div class="container w-100 h-100" style="background-color: white;">
+    <div class="row">
+      <div class="col-12 text-center mt-5">
+        <div class="mt-5">
+            <p class="h1 text-secondary my-5 text-strong">Thank you for signing up with <span class="text-primary">Chatversity</span> 
+              <img src="/assets/logos/logo-mark-64.png" class="img-fluid img-responsive mx-auto mb-3" width="64px" style="padding-left:10px;"
+              alt="Chatversity Logo Mark">
+            </p>
+
+            <div style="margin-top: 10%;">
+                <p class="text-dark" style="font-size:1.2em;">
+                  Would you like to set up your profile now?
+                </p>
+                <div class="mt-5">
+                  <a [routerLink]="['/settings']" [queryParams]="{view:'profile'}"><button class="btn btn-primary mt-2 styled-btn">Yes</button></a> &nbsp;
+                  <a [routerLink]="['/home']"><button class="btn btn-outline-primary mt-2 styled-btn">No</button></a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
