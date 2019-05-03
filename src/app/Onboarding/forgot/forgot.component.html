@@ -1,3 +1,78 @@
-<p>
-  forgot works!
-</p>
+<div class="container">
+  <div class="row align-items-center mt-5">
+    <div class="col">
+      <!-- NO TOUCHY! -->
+    </div>
+    <div class="col mt-5">
+      <!-- Locked Out Logo -->
+      <div class="text-center">
+        <img
+          src="/assets/images/forgot_circle-lock.png"
+          class="img-fluid img-responsive mx-auto mb-4"
+          width="64px"
+        />
+        <h1
+          class="text-center h4 text-secondary mt-2"
+          style="font-family:'Poppins'; font-weight: 700;"
+        >
+          Forgot your passsword?
+        </h1>
+        <h6
+          class="text-center h6 text-secondary mt-4"
+          style="font-family:'Poppins'; font-weight: 300;"
+        >
+          Enter Your Email And We'll Send You A Link To Get Back Into Your
+          Account.
+        </h6>
+      </div>
+      <!-- Form Fields -->
+      <div class="mt-5 mb-3">
+        <!-- Form Fields | Username -->
+        <div class="form-group">
+          <label for="username" class="text-secondary">Username</label>
+          <input
+            type="text"
+            name="username"
+            formControlName="username"
+            class="form-control"
+            tabindex="1"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+          />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required.</div>
+            <div *ngIf="f.username.errors.email || f.username.errors.pattern">
+              The username {{ f.username.value }} is invalid.
+            </div>
+          </div>
+        </div>
+        <!-- Form Fields | Button -->
+        <button
+          [disabled]="loading"
+          class="btn btn-primary btn-block mt-4 px-4 py-3"
+          tabindex="3"
+        >
+          <span *ngIf="!loading">Sign in</span>
+          <div *ngIf="loading" class="spinner-border text-whiet" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </button>
+        <!-- Signup | Signin -->
+        <div class="mt-5">
+            <div class="row text-center">
+              <div class="col">
+                <h6><a [routerLink]="['/signup']">Need an account?</a></h6>
+              </div>
+              <div class="col">
+                <h6><a [routerLink]="['/login']">Back to Login</a></h6>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col">
+      <!-- NO TOUCHY! -->
+    </div>
+  </div>
+  <!-- Import the Footer -->
+  <app-footer></app-footer>
+</div>
