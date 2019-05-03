@@ -1,0 +1,44 @@
+#signup-pic {
+  background: url("/assets/images/signup-pic-100.png");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  top: 0;
+}
+
+#signup-text{
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-top: 48vh;
+  #title{
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  #tagline {
+    color: #0e425f;
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  #theBtn{
+    visibility: hidden;
+    @media screen and (max-width: 767px) {
+      visibility: visible;
+  }
+  }
+}
+
+.primary-border{
+  border: 1px solid rgba(38, 177, 255, .35);
+}
+.danger-border{
+  border: 1px solid #ff4136;
+}
+::placeholder { 
+  color: #96B7C9;
+  opacity: 1; 
+}
+input[readonly] {
+  background-color: white;
+}
