@@ -1,3 +1,117 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <div class="row align-items-center mt-5">
+    <div class="col">
+      <!-- NO TOUCHY! -->
+    </div>
+    <div class="col mt-5">
+      <!-- Chatversity Logo -->
+      <div class="text-center">
+        <img
+          src="/assets/logos/logo-mark-64.png"
+          class="img-fluid img-responsive mx-auto mb-4"
+          width="64px"
+        />
+        <h1
+          class="text-center h4 text-secondary mt-2"
+          style="font-family:'Poppins'; font-weight: 300;"
+        >
+          Sign in to Chatversity
+        </h1>
+      </div>
+      <!-- Form Fields -->
+      <div class="mt-5 mb-3">
+        <!-- Form Fields | Username -->
+        <div class="form-group">
+          <label for="username" class="text-secondary">Username</label>
+          <input
+            type="text"
+            name="username"
+            formControlName="username"
+            class="form-control"
+            tabindex="1"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+          />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required.</div>
+            <div *ngIf="f.username.errors.email || f.username.errors.pattern">
+              The username {{ f.username.value }} is invalid.
+            </div>
+          </div>
+        </div>
+        <!-- Form Fields | Password -->
+        <div class="form-group">
+          <label for="username" class="text-secondary">Password</label>
+          <span
+            for="username"
+            class="text-secondary float-right font-weight-light small"
+            ><a [routerLink]="['/forgot']">Forgot Password?</a></span
+          >
+          <input
+            type="password"
+            formControlName="password"
+            maxlength="40"
+            class="form-control"
+            tabindex="2"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+          />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required.</div>
+            <div *ngIf="f.password.errors.minlength">
+              Passwords are atleast 8 characters.
+            </div>
+            <div *ngIf="f.password.errors.maxlength">
+              Passwords cannot exceed 40 characters.
+            </div>
+          </div>
+        </div>
+        <!-- Form Fields | Button -->
+        <button
+          [disabled]="loading"
+          class="btn btn-primary btn-block mt-4"
+          tabindex="3"
+        >
+          <span *ngIf="!loading">Sign in</span>
+          <div *ngIf="loading" class="spinner-border text-whiet" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </button>
+      </div>
+      <!-- Signup Link -->
+      <div class="mt-5">
+        <p class="text-center text-secondary">
+          New to Chatversity? &nbsp;<a [routerLink]="['/signup']" tabindex="4"
+            >Create an account.</a
+          >
+        </p>
+      </div>
+      <!-- App Store Links -->
+      <div class="mt-4">
+        <div class="row">
+          <div class="col">
+            <a href="#" tabindex="5">
+              <img
+                src="/assets/app-store-badges/AppStore.png"
+                class="img-fluid img-responsive mx-auto store-resize"
+                style="min-width: 150px; min-height: 60px;"
+              />
+            </a>
+          </div>
+          <div class="col">
+            <a href="#">
+              <img
+                src="/assets/app-store-badges/GooglePlay.png"
+                class="img-fluid img-responsive mx-auto store-resize"
+                style="min-width: 150px; min-height: 60px;"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <!-- NO TOUCHY! -->
+    </div>
+  </div>
+  <!-- Import the Footer -->
+  <app-footer></app-footer>
+</div>
