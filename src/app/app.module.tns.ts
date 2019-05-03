@@ -11,6 +11,10 @@ import { NewUserComponent } from './Onboarding/new-user/new-user.component';
 import { FooterComponent } from './Shared/footer/footer.component';
 import { NavbarComponent } from './Shared/navbar/navbar.component';
 import { ErrorComponent } from './Shared/error/error.component';
+import { MessagesComponent } from './messages/messages.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { SettingsComponent } from './settings/settings.component';
+import { UpdatesComponent } from './Shared/updates/updates.component';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -30,6 +34,10 @@ import { ErrorComponent } from './Shared/error/error.component';
     FooterComponent,
     NavbarComponent,
     ErrorComponent,
+    MessagesComponent,
+    RoomsComponent,
+    SettingsComponent,
+    UpdatesComponent,
   ],
   imports: [
     NativeScriptModule,
