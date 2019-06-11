@@ -1,0 +1,220 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5" id="signup-pic">
+      <!-- Left Panel | Image & Text -->
+      <div id="signup-text" class="ml-4">
+        <h4 id="title">Chatversity</h4>
+        <h5 id="tagline">
+          Simplifying <br />
+          Communication
+        </h5>
+        <button
+          type="button"
+          class="btn btn-secondary mt-5 px-4 py-3"
+          id="theBtn"
+        >
+          Signup today!
+        </button>
+      </div>
+    </div>
+    <!-- Right Panel | Logo & Form -->
+    <div class="col-md-7">
+      <!-- Image -->
+      <div class="w-100 mx-auto text-center mb-5 mt-4">
+        <img
+          src="/assets/logos/Logo-Name-Long.png"
+          class="img-fluid img-responsive mx-auto mb-4"
+          width="353px"
+        />
+      </div>
+      <!-- Form -->
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6">
+          <!--First Name-->
+          <div class="form-group mb-3">
+            <label for="firstname" class="text-secondary"
+              >First Name <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              required
+              class="form-control primary-border"
+              id="firstname"
+              name="firstname"
+              placeholder="John"
+              formControlName="firstname"
+              maxlength="30"
+              [ngClass]="{
+                'is-invalid': submitted && f.firstname.errors,
+                'danger-border': submitted && f.firstname.errors
+              }"
+            />
+
+            <div
+              *ngIf="submitted && f.firstname.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstname.errors.required">
+                Please provide your first name.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Last Name-->
+        <div class="col-12 col-sm-6 col-md-6">
+          <div class="form-group mb-3">
+            <label for="lastname" class="text-secondary"
+              >Last Name <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              required
+              class="form-control primary-border"
+              id="lastname"
+              name="lastname"
+              placeholder="Doe"
+              formControlName="lastname"
+              maxlength="30"
+              [ngClass]="{
+                'is-invalid': submitted && f.lastname.errors,
+                'danger-border': submitted && f.lastname.errors
+              }"
+            />
+
+            <div
+              *ngIf="submitted && f.lastname.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.lastname.errors.required">
+                Please provide your last name.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Username (Email) Textbox-->
+      <div class="form-group mb-3">
+        <label for="username" class="text-secondary"
+          >Email <span class="text-danger">*</span></label
+        >
+        <input
+          type="email"
+          required
+          name="username"
+          formControlName="username"
+          placeholder="you@university.edu"
+          class="form-control primary-border"
+          [ngClass]="{
+            'is-invalid': submitted && f.username.errors,
+            'danger-border': submitted && f.username.errors
+          }"
+          (change)="getUniversity(f.username.value)"
+        />
+        <div class="text-primary" *ngIf="!submitted || !f.username.errors">
+          <small
+            ><span class="text-danger">*</span> PLEASE ENTER YOUR SCHOOL
+            EMAIL</small
+          >
+        </div>
+
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">
+            Please provide your school email.
+          </div>
+          <div *ngIf="f.username.errors.email || f.username.errors.pattern">
+            The username {{ f.username.value }} is invalid.
+          </div>
+          <div *ngIf="f.username.errors.oktaError">
+            The username {{ f.username.value }} is already taken.
+          </div>
+        </div>
+      </div>
+
+      <!--University Select-->
+      <div class="form-group mb-3">
+        <label for="university" class="text-secondary"
+          >University <span class="text-danger">*</span></label
+        >
+        <input
+          type="text"
+          [readonly]="true"
+          name="university"
+          required
+          formControlName="university"
+          class="form-control primary-border"
+          placeholder="University of Michigan"
+          (change)="userUpdateUniversity(f.university.value)"
+          [ngClass]="{
+            'is-invalid': submitted && f.university.errors,
+            'danger-border': submitted && f.university.errors
+          }"
+        />
+
+        <div *ngIf="submitted && f.university.errors" class="invalid-feedback">
+          <div *ngIf="f.university.errors.required">
+            Please provide your university.
+          </div>
+          <div *ngIf="f.university.errors.invalid">Invalid university.</div>
+        </div>
+      </div>
+
+      <!--Password-->
+      <div class="form-group">
+        <label for="password" class="text-secondary"
+          >Password <span class="text-danger">*</span></label
+        >
+        <input
+          type="password"
+          required
+          formControlName="password"
+          placeholder="Create a password"
+          maxlength="40"
+          class="form-control primary-border"
+          [ngClass]="{
+            'is-invalid': submitted && f.password.errors,
+            'danger-border': submitted && f.password.errors
+          }"
+        />
+
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">
+            Please choose a password.
+          </div>
+          <div
+            *ngIf="
+              (f.password.errors.minlength || f.password.errors.pattern) &&
+              !f.password.errors.maxlength
+            "
+          >
+            Your password must have atleast: <br />
+            <div style="padding-left:20px">
+              >&nbsp; 8 characters <br />
+              >&nbsp; 1 uppercase letter <br />
+              >&nbsp; 1 number
+            </div>
+          </div>
+          <div *ngIf="f.password.errors.maxlength">
+            Your password cannot exceed 40 characters
+          </div>
+        </div>
+
+        <button
+          [disabled]="loading"
+          class="btn btn-login btn-primary btn-block mt-4 py-3"
+        >
+          <span *ngIf="!loading">SIGN UP FOR CHATVERSITY</span>
+          <div *ngIf="loading" class="spinner-border text-whiet" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="text-secondary text-center my-4">
+        Already have an account? &nbsp;
+        <a [routerLink]="['/login']" class="text-primary">Login</a>
+      </div>
+    </div>
+  </div>
+</div>
